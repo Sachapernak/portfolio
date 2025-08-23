@@ -1,0 +1,112 @@
+:root {
+    /* ===== Base Background ===== */
+    --angle: 131deg;
+    --bg-color1: #6366F1;          /* Indigo 500 */
+    --bg-color2: #EC4899;          /* Pink 500 */
+
+    /* ===== Text ===== */
+    --text-light: #F0F8FF;         /* AliceBlue, texte clair */
+    --text-dark: #111827;          /* Gris anthracite (si besoin de clair sur fond blanc) */
+    --text-subtle: #9CA3AF;        /* Gris neutre pour légendes */
+
+    /* ===== Accents ===== */
+    --accent: #FDE68A;             /* Jasmine (jaune pastel) */
+    --accent-strong: #F59E0B;      /* Orange plus vif */
+    --text-on-accent: #1F2937;     /* Gris foncé pour contraste sur accent clair */
+
+    /* ===== Surfaces Glassy ===== */
+    --glass: rgba(0,0,0,0.28);     /* Fond semi-transparent sombre */
+    --glass-bright: rgba(255,255,255,0.08); /* Variante claire (rare) */
+    --blur: 18px;                  /* Intensité du blur */
+    --shadow: 0 10px 30px rgba(0,0,0,.25);
+
+    /* ===== Cards / Elements ===== */
+    --card-bg: rgba(255,255,255,0.06);
+    --card-border: rgba(255,255,255,0.14);
+
+    /* ===== Extra dark backgrounds  ===== */
+    --raisin-black: #232431;       /* Fond section sombre */
+    --charcoal: #464857;           /* Fond cartes plus claires */
+    --oxford-blue: #101026;        /* Alternative très sombre */
+
+    /* ===== Couleurs du plexus (gris un peu soutenu, faible opacité)  =====*/
+    --dot-color: rgba(182,188,200,0.40);
+    --line-color: rgba(182,188,200,0.26);
+}
+
+
+*{
+    box-sizing:border-box
+}
+
+#plexus{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none; /* ne bloque pas l’UI */
+}
+
+html,body{
+    height:100%
+}
+
+body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text-light);
+    scroll-behavior: smooth;
+    background: #000;
+}
+
+/* Fond gradient plein écran  */
+body::before{
+    content:"";
+    position: fixed;
+    inset:0;
+    z-index:-2;
+    background: linear-gradient(var(--angle), var(--bg-color1) 0%, var(--bg-color2) 100%);
+}
+
+/* Légère trame pour donner de la matière (optionnel, peut être retirée) */
+body::after{
+    content:"";
+    position: fixed;
+    inset:-50%;
+    z-index:-1;
+    background:
+            radial-gradient(1200px 800px at 85% -10%, rgba(255,255,255,.08), transparent 60%),
+            radial-gradient(1000px 700px at -10% 110%, rgba(0,0,0,.22), transparent 60%);
+    pointer-events:none;
+}
+
+nav {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.glass-link {
+    text-align: center;
+    color: var(--text-light);
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 5vw;
+    border-radius: 9999px;
+    background: var(--glass);
+    padding :  .5rem 1rem;
+    margin : .5rem;
+
+}
+
+.glass-link:hover {
+    background: var(--glass-bright);
+    box-shadow: 6px 6px 10px 0 rgba(0,0,0,.22), -6px -6px 10px 0 var(--glass-bright);
+
+}
+
+.glass-link:active {
+    box-shadow: inset 6px 6px 10px 0 rgba(0,0,0,.22), inset -6px -6px 10px 0 var(--glass-bright);
+}
