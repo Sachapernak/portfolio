@@ -3,29 +3,31 @@ const canvas = document.getElementById("plexus");
 const ctx = canvas.getContext("2d");
 
 
+const rem =  parseFloat(getComputedStyle(document.documentElement).fontSize)
+
 let W, H, particles = [];
 // == Parametres ==
 const Param = {
     dotRadius: 2,
-    lineWidth: 4,
+    lineWidth: 2 * rem / 16,
 
-    maxLineDistance : 140,
-    maxPointSpeed : .8,
-    maxAddedSpeed : .02,
-    startMaxPointSpeed : 0.1,
-    maxLinks : 4,
+    maxLineDistance : 190,
+    maxPointSpeed : 1,
+    maxAddedSpeed : .05,
+    startMaxPointSpeed : 0.08,
+    maxLinks : 3,
     minPointSpeed : 0.001,
-    density: 0.00011,
+    density: 0.00003,
 
-    mouseForce: 0.009,
-    mouseRadius: 120,
+    mouseForce: 0.1,
+    mouseRadius: 70,
     frictionForce: 0.999,
 }
 
 // récup de la taille de l'écran
 function resizeCanvas() {
     //  Densité de pixel réelle
-    const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));  // 1 <= dpr <= 2 pour de bonnes perfs
+    const dpr = Math.max(1, Math.min(1.5, window.devicePixelRatio || 1));  // 1 <= dpr <= 2 pour de bonnes perfs
 
     W =  Math.floor(window.innerWidth * dpr);
     canvas.width = W;
@@ -90,9 +92,7 @@ function draw(){
         const angle = Math.random() * 2 * Math.PI;
         const speed = Math.random() * Param.startMaxPointSpeed;
 
-        // --- friction ---
-        //p.vx *= Param.frictionForce ;
-        //p.vy *= Param.frictionForce;
+        // --- friction + min speed---
 
         p.vx = Math.abs(p.vx * Param.frictionForce) >= Param.minPointSpeed ? p.vx * Param.frictionForce : Math.cos(angle) * speed;
         p.vy = Math.abs(p.vy * Param.frictionForce) >= Param.minPointSpeed ? p.vy * Param.frictionForce : Math.sin(angle) * speed;
@@ -124,6 +124,7 @@ function draw(){
 
     // --- Lignes entre points proches
     ctx.strokeStyle = getVar('--line-color');
+    ctx.lineWidth = Param.lineWidth;
 
     for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
@@ -137,7 +138,7 @@ function draw(){
 
             if (d2 < L2 && links < Param.maxLinks) {
                 links++;
-                ctx.globalAlpha = 1 - Math.sqrt(d2) / Param.maxLineDistance;
+                ctx.globalAlpha = 1.2 - Math.sqrt(d2) / Param.maxLineDistance;
                 ctx.beginPath();
                 ctx.moveTo(p1.x, p1.y);
                 ctx.lineTo(p2.x, p2.y);

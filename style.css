@@ -1,4 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 :root {
+    /* -------------------------
+       Typography Scale
+       Font family: Inter
+    -------------------------- */
+
+    /* font family */
+    --ff: "Inter", sans-serif;
+
+    /* landing page */
+    --h1: 700 4rem/1em var(--ff);              /* 64 / 64px */
+    --h2: 700 3rem/1.2em var(--ff);            /* 48 / 58px */
+    --h3: 700 2.25rem/1.2em var(--ff);         /* 36 / 43px */
+    --h4: 700 1.5rem/1.6em var(--ff);          /* 24 / 38px */
+    --subheading: 600 1.25rem/1.4em var(--ff); /* 20 / 28px uppercase */
+
+    --big: 400 1.4rem/1.6em var(--ff);        /* 20 / 32px */
+    --p: 400 1.3rem/1.6em var(--ff);             /* 20 / 26px */
+    --small: 400 .9rem/1.8em var(--ff);         /* 12 / 24px */
+
+    /* UIs */
+    --h1ui: 700 3rem/1.2em var(--ff);
+    --h2ui: 700 2.25rem/1.2em var(--ff);
+    --h3ui: 700 1.5rem/1.2em var(--ff);
+    --h4ui: 700 1.3rem/1.6em var(--ff);
+    --bigui: 400 1.2rem/1.6em var(--ff);
+    --pui: 400 1rem/1.6em var(--ff);
+    --smallui: 400 .9rem/1.8em var(--ff);
+
+    --boldui : 700 1rem/1.6em var(--ff);
+
+    --accent-weight : 600;
+
+
+    /* -------------------------
+       Colors
+    -------------------------- */
+
     /* ===== Base Background ===== */
     --angle: 131deg;
     --bg-color1: #6366F1;          /* Indigo 500 */
@@ -32,11 +71,68 @@
     /* ===== Couleurs du plexus (gris un peu soutenu, faible opacité)  =====*/
     --dot-color: rgba(182,188,200,0.40);
     --line-color: rgba(182,188,200,0.26);
+
+
+    /* Layout */
+    --wrap: 1200px;
+    --radius: 18px;
+
 }
 
+/* landing page */
+h1, .h1sized { font: var(--h1); }
+h2, .h2sized { font: var(--h2); }
+h3, .h3sized { font: var(--h3); }
+h4, .h4sized { font: var(--h4); }
+.subheading {
+    font: var(--subheading);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.big { font: var(--big); }
+p, .psized { font: var(--p); }
+.small { font: var(--small); }
+
+/* UIs */
+.ui h1, .uih1 { font: var(--h1ui); }
+.ui h2, .uih2 { font: var(--h2ui); }
+.ui h3, .uih3 { font: var(--h3ui); }
+.ui h4, .uih4 { font: var(--h4ui); }
+.ui.big { font: var(--bigui); }
+.ui p, .uip { font: var(--pui); }
+.ui.small { font: var(--smallui); }
+.ui.bold { font: var(--boldui); }
+
+
+h1,h2,h3,h4 {
+    margin: .5rem 0 1rem;
+}
+
+.subheading,.big,p {
+    margin: 1rem 0 1rem;
+}
+.small {
+    margin: 0.25rem 0 0;
+}
+
+.ui { margin-top: 2rem; }
+
+.accent {
+    color: var(--accent);
+    font-weight: var(--accent-weight);
+}
 
 *{
-    box-sizing:border-box
+    box-sizing:border-box;
+}
+
+body {
+    margin: 0.2rem;
+    font-family: var(--ff) Inter, system-ui;
+    text-wrap: balance;
+    scroll-behavior: smooth;
+    background: #000;
+    color: var(--text-light);
 }
 
 #plexus{
@@ -50,13 +146,7 @@ html,body{
     height:100%
 }
 
-body{
-    margin:0;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    color:var(--text-light);
-    scroll-behavior: smooth;
-    background: #000;
-}
+
 
 /* Fond gradient plein écran  */
 body::before{
@@ -80,7 +170,10 @@ body::after{
 }
 
 nav {
+    z-index: 9999;
+    position: fixed;
     display:flex;
+    flex-wrap: wrap;
     flex-direction:row;
     width:100%;
     margin-left: auto;
@@ -109,4 +202,89 @@ nav {
 
 .glass-link:active {
     box-shadow: inset 6px 6px 10px 0 rgba(0,0,0,.22), inset -6px -6px 10px 0 var(--glass-bright);
+}
+
+section.panel{
+
+    min-height:80vh;
+    display:grid; place-items:center;
+    padding: 20vh clamp(10px, 4vw, 48px) clamp(10px, 4vw, 48px);
+}
+.two-panel{
+    display:flex;
+
+}
+/* Encart glassy commun */
+.glass{
+    width:min(96%, var(--wrap));
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,.16);
+    padding: clamp(10px, 4vw, 48px);
+}
+
+.btn{
+    margin-right : auto;
+    margin-top : auto;
+    display:inline-block;
+    padding:.8rem 1.2rem;
+    border-radius:10px;
+    background: var(--accent);
+    color: var(--text-on-accent);
+    text-decoration:none;
+    border:1px solid
+    rgba(0,0,0,.06);
+    transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+.left-pane .btn {
+    margin-bottom: 2.05em;
+}
+
+.btn:hover{ background: var(--accent-strong); color:#fff; transform: translateY(-1px); }
+
+.left-pane{
+    margin-right:clamp(15px, 3vw, 48px);;
+    display:inline-flex;
+    flex-direction:column;
+    max-width: 67%;
+}
+.right-pane{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display:flex;
+    max-width: 33%;
+}
+
+.right-pane img {
+    margin-top: auto;
+    margin-bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+    border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.right-pane .small{
+    margin-bottom: auto;
+}
+
+.card{
+    background: var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: clamp(12px, 2.5vw, 20px);
+    margin-top: clamp(16px, 2.5vw, 24px);
+}
+
+.card:hover{
+    background: var(--glass-bright);
+    box-shadow: 6px 6px 10px 0 rgba(0,0,0,.22), -6px -6px 10px 0 var(--glass-bright);
+    /*cursor: pointer;*/
+
 }
