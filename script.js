@@ -2,7 +2,6 @@
 const canvas = document.getElementById("plexus");
 const ctx = canvas.getContext("2d");
 
-
 const rem =  parseFloat(getComputedStyle(document.documentElement).fontSize)
 
 let W, H, particles = [];
@@ -168,3 +167,8 @@ document.addEventListener('visibilitychange', () => {
     if (document.hidden) stop();
     else start();
 });
+
+
+function showSection(){
+
+}
