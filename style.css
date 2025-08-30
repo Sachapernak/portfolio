@@ -110,7 +110,7 @@ p, li, .psized { font: var(--p); }
 
 
 h1,h2,h3,h4 {
-    margin: .5rem 0 1rem;
+    margin: 1rem 0 1rem;
 }
 
 .subheading,.big,p {
@@ -284,13 +284,17 @@ section.panel{
     padding: 18px;
 }
 
+.card:hover{
+    background: var(--glass-bright);
+    box-shadow: 6px 6px 10px 0 rgba(0,0,0,.22), -6px -6px 10px 0 var(--glass-bright);
+}
+
 .card-link {
     height: 100%;
     text-decoration: none;
     color: inherit;
     display: grid; /* ensures clickable area fits */
 }
-
 .grid{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
@@ -298,32 +302,46 @@ section.panel{
     margin-top: clamp(16px, 2.5vw, 24px);
 }
 
-/* On garde ? */
-#skills .grid{
+
+.skills-grid{
+    display:grid;
+    gap: clamp(12px, 2.5vw, 20px);
+    margin-top: clamp(16px, 2.5vw, 24px);
     grid-auto-rows: auto;
     align-items: start;
-}
 
-.card:hover{
-    background: var(--glass-bright);
-    box-shadow: 6px 6px 10px 0 rgba(0,0,0,.22), -6px -6px 10px 0 var(--glass-bright);
-}
-
-
-.skill-logo{
-    height:3.2em;
-    width:auto;
-    flex-shrink:0;
 }
 
 .skill-header{
     display:flex;
-    align-items:center;
+    align-items: baseline;
     gap:1em;
-    height:5em;
+    min-height:3.6em;
     position: relative;
     padding-right: 2em;
 }
+
+.skill-header > img{
+    height:3.2em;
+    width:15%;
+    max-width: 120px;
+    flex-shrink:0;
+    flex-grow: 0;
+    margin: auto auto auto 0.1em;
+}
+
+.skill-header h4 {
+    flex-grow: 1;
+    margin: auto;
+    max-width: 120px;
+}
+
+.skill-header .small{
+    margin: auto;
+    flex-grow: 2;
+}
+
+
 
 .skill-header::after{
     content:"▾";
@@ -336,44 +354,8 @@ section.panel{
     opacity:.9;
 }
 
-.skill[open] .skill-header::after{
+.skills-grid > .card[open] .skill-header::after{
     transform: translateY(-50%) rotate(-180deg);
-}
-
-.skill[open] {
-
-}
-
-.skill-header img {
-    width: auto;
-}
-
-.skill-details{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.skill-details h4 {
-    margin: 0;
-    padding : 0;
-}
-
-.skill-details p{
-    margin: 0;
-    padding : 0;
-}
-
-.show-more {
-    align-content: space-around;
-    width : 3em;
-    text-align: center;
-}
-
-.show-more p{
-    height : 1.2em;
-    margin : 0;
 }
 
 .divider {
@@ -385,6 +367,10 @@ section.panel{
 ul {
     list-style-type: "-";
     margin : 0.3em 0;
+}
+
+.skill-projects {
+    margin-left : clamp(20px, 10%, 50px);
 }
 
 .skill-projects h5{
@@ -404,9 +390,9 @@ li a:hover{
     color: var(--accent);
 }
 
-.skill summary {
+.skills-grid > .card > summary {
     list-style: none;
     cursor: pointer;
 }
 
-.skill summary::-webkit-details-marker { display:none; }
+.skills-grid > .card > summary::-webkit-details-marker { display:none; }

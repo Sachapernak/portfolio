@@ -169,6 +169,3 @@ document.addEventListener('visibilitychange', () => {
 });
 
 
-function showSection(){
-
-}
