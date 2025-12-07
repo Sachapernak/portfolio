@@ -45,7 +45,7 @@
 <!-- PROJETS -->
 <section id="projects" class="panel">
     <div class="glass reveal">
-        <h2 class="h2">My Projects</h2>
+        <h2 class="h2">Current Projects</h2>
         <p>Bellow you will find some of my current or upcoming projects :</p>
         <div class="grid">
             <a href="https://github.com/sachapernak/portfolio" target="_blank" rel="noopener" class="card-link">
@@ -54,18 +54,12 @@
                     <p>A simple HTML/CSS/JS web <span class="accent">portfolio</span> to showcase my skills and projects — and yes, you’re <span class="accent">already exploring it!</span></p>
                 </article>
             </a>
-            <a href="https://github.com/Sachapernak/Menage-a-deux" target="_blank" rel="noopener" class="card-link">
+            <div class="card-link">
                 <article class="card">
-                    <h3 class="h3">#Ménage à Deux</h3>
-                    <p>A playful household task manager designed for <span class="accent">two</span>, with a <span class="accent">fun twist</span> for daily chores.</p>
+                    <h3 class="h3">#Revu</h3>
+                    <p> <span class="accent">ML classification</span> used to find out the causes of incidents, developed at <span class="accent">Enedis</span> during my internship.</p>
                 </article>
-            </a>
-            <a href="https://github.com/Sachapernak/PlantIA" target="_blank" rel="noopener" class="card-link">
-                <article class="card">
-                    <h3 class="h3">#PlantIA</h3>
-                    <p>Smart plant assistant that  <span class="accent">identifies plants</span>, organizes them and provides <span class="accent">personalized care advice</span>.</p>
-                </article>
-            </a>
+            </div >
         </div>
     </div>
 </section>
@@ -76,190 +70,351 @@
         <h2 class="h2">My Skills</h2>
         <p>Here is a quick summary of my skills</p>
 
-        <h3>Programming Languages</h3>
+        <h3>Data</h3>
         <div class="skills-grid">
-
-            <!-- Java Skill card-->
             <details class="card">
                 <summary class="skill-header">
-                    <img alt="Java logo" src="/images/Skills/Java%20Logo.svg">
-                    <h4>Java</h4>
-                    <span class="small">2 Projects</span>
+                    <img alt="DB logo" src="/images/Skills/db.svg">
+                    <h4>Database</h4>
+                    <span class="small">Multiple Projects</span>
+                </summary>
+                <div class="divider"></div>
+                <div class="skill-projects">
+                    <h5>Relational Database</h5>
+                    <ul>
+                        <li>
+                            <p>
+                                - Multiple work projects @ <span class="white-accent">Enedis</span>
+                                <br>
+                                - Multiple academic projects (e.g, <a href="https://github.com/Sachapernak/BUT2-s3-SAE-location"
+                                                                       target="_blank" rel="noopener">Landlord app</a>)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Built highly normalized database schemas from scratch, from Conceptual Data Models (CDM)
+                                to Logical (LDM) and Physical (PDM) implementations in SQL.
+                            </p>
+                            <p>
+                                Developed stored procedures, triggers, and automation jobs (VACUUM, backups, log purge…).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies:</span> PostgreSQL, Oracle DBMS, PL/SQL, Python, Shell.
+                            </p>
+                        </li>
+
+                    </ul>
+                    <h5> NoSQL Databases</h5>
+                    <ul>
+                        <li>
+                            <p>
+                            - 1 academic project
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Explored and learned to use NoSQL databases with MongoDB. Queried, inserted, and
+                                manipulated documents using MongoDB’s query language.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies: </span> MongoDB.
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+            </details>
+
+
+            <details class="card">
+                <summary class="skill-header">
+                    <img alt="Logo ETL" src="/images/Skills/ETL.svg">
+                    <h4>ETL</h4>
+                    <span class="small">3 Projects</span>
                 </summary>
 
                 <div class="divider"></div>
                 <div class="skill-projects">
-                    <h5>Academic</h5>
+                    <h5>Python ETL & Medallion Architecture</h5>
                     <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s3-SAE-location" target="_blank" rel="noopener">Landlord assistant</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT1-s2-SAE-Vente" target="_blank" rel="noopener">Cheese seller</a></li>
+                        <li>
+                            <p>
+                               - 1 Work Project @ <span class="white-accent">Enedis</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Built and enhanced Python ETL pipelines to ingest and transform data from multiple
+                                sources (REST APIs, flat files, exports) into a Bronze / Silver / Gold
+                                medallion-style data warehouse
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies: </span> Python, SQL, Scheduled jobs.
+                            </p>
+                        </li>
+
+                    </ul>
+                    <h5>Dataiku workflow</h5>
+                    <ul>
+                        <li>
+                            <p>
+                                - 1 Work Project @ <span class="white-accent">Enedis</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Designed and maintained Dataiku workflows & recipes to automate ingestion, cleaning, preparation,
+                                and transformation of heterogeneous data sources.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies: </span> Dataiku, Python, SQL.
+                            </p>
+                        </li>
+                    </ul>
+                    <h5>KNIME Analytics Platform</h5>
+                    <ul>
+                        <li>
+                            <p>
+                                - 1 Academic project: <a href="https://github.com/Sachapernak/BUT2-s4-SAE-Dataviz-IA"
+                                                        target="_blank" rel="noopener">OpenFoodFact data analysis</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Built an ETL pipeline using KNIME and Python to convert large NoSQL-like CSV datasets
+                                into structured and cleaned relational tables, for PostgreSQL
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies: </span> Knime, Python, SQL.
+                            </p>
+                        </li>
                     </ul>
                 </div>
             </details>
 
-            <!-- Python card-->
             <details class="card">
                 <summary class="skill-header">
-                    <img alt="Python logo" src="/images/Skills/Python%20logo.svg">
-                    <h4>Python</h4>
-                    <span class="small">2 Projects</span>
+                    <img alt="PBI logo" src="/images/Skills/PBI.svg">
+                    <h4>Analytics & BI</h4>
+                    <span class="small">Multiple Projects</span>
                 </summary>
 
                 <div class="divider"></div>
                 <div class="skill-projects">
-                    <h5>Academic</h5>
+                    <h5>Power BI</h5>
                     <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s4-SAE-Dataviz-IA" target="_blank" rel="noopener">"Nutriscore" prediction and visualisation</a></li>
-                        <li><a href="https://github.com/enzo-dosanjos/Microscopic-Image-Analysis-with-python" target="_blank" rel="noopener">Microscopic image analysis</a></li>
-                    </ul>
-                </div>
-            </details>
+                        <li>
+                            <p>
+                                - Multiple work projects @ <span class="white-accent">Enedis</span>
+                                <br>
+                                - 1 Academic project: <a href="https://github.com/Sachapernak/BUT2-s4-SAE-Dataviz-IA"
+                                                         target="_blank" rel="noopener">OpenFoodFact data analysis</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Created interactive dashboards with automated refresh, data modeling, DAX measures,
+                                and workspace configuration.
 
-            <!-- C card-->
-            <details class="card">
-                <summary class="skill-header">
-                    <img alt="C logo" src="/images/Skills/C-logo.svg">
-                    <h4>C</h4>
-                    <span class="small">1 Project</span>
-                </summary>
+                            </p>
+                            <p>
+                                Worked with PBIP project structure, Git versioning, Azure DevOps and Power BI Service for
+                                production-ready analytics pipelines.
+                            </p>
 
-                <div class="divider"></div>
-                <div class="skill-projects">
-                    <h5>Academic</h5>
-                    <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT1-s2-miniprojet-c" target="_blank" rel="noopener">Text encryption</a></li>
-                    </ul>
-                </div>
-            </details>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies:</span> PowerBI, PBI Service, Git, Azure.
+                            </p>
+                        </li>
 
-
-            <!-- PHP -->
-            <details class="card">
-                <summary class="skill-header">
-                    <img alt="PHP logo" src="/images/Skills/PHP%20Logo.svg">
-                    <h4>PHP</h4>
-                    <span class="small">4 Projects</span>
-                </summary>
-
-                <div class="divider"></div>
-                <div class="skill-projects">
-                    <h5>Work</h5>
-                    <ul>
-                        <li><p>Enedis's Web App</p></li>
                     </ul>
 
-                    <h5>Academic</h5>
+                    <h5>Oracle Application Express</h5>
                     <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s4-Handipro-Front" target="_blank" rel="noopener">Handisport Manager Front S4</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s4-Handipro-Auth" target="_blank" rel="noopener">Handisport Manager Auth S4</a></li>
-                        <li><a href="https://github.com/e-r-i-n-e/ProjetPhp-BackEnd" target="_blank" rel="noopener">Handisport Manager Back S4</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s3-Projet-PHP" target="_blank" rel="noopener">Handisport Manager S3</a></li>
-                    </ul>
-                </div>
-            </details>
-
-            <!-- HTML  -->
-            <details class="card">
-                <summary class="skill-header">
-                    <img alt="HTML logo" src="/images/Skills/HTML5%20Logo.svg">
-                    <h4>HTML</h4>
-                    <span class="small">5 Projects</span>
-                </summary>
-
-                <div class="divider"></div>
-                <div class="skill-projects">
-                    <h5>Personal</h5>
-                    <ul>
-                        <li><a href="https://github.com/Sachapernak/portfolio" target="_blank" rel="noopener">Portfolio</a></li>
-                    </ul>
-
-                    <h5>Work</h5>
-                    <ul>
-                        <li><p>Enedis's Web App</p></li>
+                        <li>
+                            <p>
+                                - 2 academic project
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Developed dashboards and interactive SQL reports to analyze student satisfaction
+                                and behavioral insights (e.g., Moodle connection and academic performance).
+                            </p>
+                            <p>
+                                Built dynamic charts, data summaries, useful filters
+                                and AI-assisted insights inside APEX.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="white-accent"> Technologies: </span> Oracle APEX.
+                            </p>
+                        </li>
                     </ul>
 
-                    <h5>Academic</h5>
-                    <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s4-Handipro-Front" target="_blank" rel="noopener">Handisport Manager Front S4</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s3-Projet-PHP" target="_blank" rel="noopener">Handisport Manager S3</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT1-s1-SAE-Site-web" target="_blank" rel="noopener">IUT's Website S1</a></li>
-                    </ul>
-                </div>
-            </details>
-
-            <!-- CSS -->
-            <details class="card">
-                <summary class="skill-header">
-                    <img alt="Logo CSS" src="/images/Skills/CSS3%20Logo.svg">
-                    <h4>CSS</h4>
-                    <span class="small">5 Projects</span>
-                </summary>
-
-                <div class="divider"></div>
-                <div class="skill-projects">
-                    <h5>Personal</h5>
-                    <ul>
-                        <li><a href="https://github.com/Sachapernak/portfolio" target="_blank" rel="noopener">Portfolio</a></li>
-                    </ul>
-
-                    <h5>Work</h5>
-                    <ul>
-                        <li><p>Enedis's Web App</p></li>
-                    </ul>
-
-                    <h5>Academic</h5>
-                    <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s4-Handipro-Front" target="_blank" rel="noopener">Handisport Manager Front S4</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s3-Projet-PHP" target="_blank" rel="noopener">Handisport Manager S3</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT1-s1-SAE-Site-web" target="_blank" rel="noopener">IUT's Website S1</a></li>
-                    </ul>
                 </div>
             </details>
         </div>
 
-        <h3>Data</h3>
-
+        <h3>Software Development</h3>
         <div class="skills-grid">
-            <!-- SQL card-->
-            <details class="card">
-                <summary class="skill-header">
-                    <img alt="SQL Logo" src="/images/Skills/SQL-logo.svg">
-                    <h4>SQL</h4>
-                    <span class="small">5 Projects</span>
-                </summary>
 
-                <div class="divider"></div>
-                <div class="skill-projects">
-                    <h5>Work</h5>
-                    <ul>
-                        <li><p>Enedis's Web App</p></li>
-                    </ul>
-                    <h5>Academic</h5>
-                    <ul>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s4-SAE-Dataviz-IA" target="_blank" rel="noopener">"Nutriscore" prediction and visualisation</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s3-SAE-location" target="_blank" rel="noopener">Landlord manager</a></li>
-                        <li><a href="https://github.com/e-r-i-n-e/ProjetPhp-BackEnd" target="_blank" rel="noopener">Handisport Manager Back S4</a></li>
-                        <li><a href="https://github.com/Sachapernak/BUT2-s3-Projet-PHP" target="_blank" rel="noopener">Handisport Manager S3</a></li>
-                    </ul>
-                </div>
-            </details>
+        <details class="card">
+            <summary class="skill-header">
+                <img alt="Backend logo" src="/images/Skills/PBI.svg">
+                <h4>Backend</h4>
+                <span class="small">Multiple Projects</span>
+            </summary>
+            <div class="divider"></div>
+            <div class="skill-projects">
+            <!-- Python -->
+            <h5>Python</h5>
+            <ul>
+                <li>
+                    <p>
+                        - 2 academic projects:
+                        <a href="https://github.com/Sachapernak/BUT2-s4-SAE-Dataviz-IA" target="_blank">NutriScore prediction</a>,
+                        <a href="https://github.com/enzo-dosanjos/Microscopic-Image-Analysis-with-python" target="_blank">Microscopic image analysis</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Used Python for data analysis, ML prototyping, and backend processing in academic projects.
+                    </p>
+                </li>
+                <li>
+                    <p><span class="white-accent">Technologies:</span> Python, NumPy, pandas, scikit-learn.</p>
+                </li>
+            </ul>
 
-            <!-- MongoDB card-->
-            <details class="card">
-                <summary class="skill-header">
-                    <img alt="MongoDB Logo" src="/images/Skills/MongoDB-Logo.svg">
-                    <h4>MongoDB</h4>
-                    <span class="small"> 1 Project</span>
-                </summary>
+            <!-- Java -->
+            <h5>Java</h5>
+            <ul>
+                <li>
+                    <p>
+                        - 2 academic projects:
+                        <a href="https://github.com/Sachapernak/BUT2-s3-SAE-location" target="_blank">Landlord manager</a>,
+                        <a href="https://github.com/Sachapernak/BUT1-s2-SAE-Vente" target="_blank">Cheese seller</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Developed Java desktop applications with object-oriented design, stock management and GUI (Swing / WindowBuilder).
+                    </p>
+                </li>
+                <li>
+                    <p><span class="white-accent">Technologies:</span> Java, Swing, JDBC.</p>
+                </li>
+            </ul>
 
-                <div class="divider"></div>
-                <div class="skill-projects">
-                    <h5>Academic</h5>
-                    <ul>
-                        <li>Unnamed / Unpublished project</li>
-                    </ul>
-                </div>
-            </details>
+            <!-- C -->
+            <h5>C Language</h5>
+            <ul>
+                <li>
+                    <p>- 2 academic project:
+                        <a href="https://github.com/Sachapernak/BUT1-s2-miniprojet-c" target="_blank">Text encryption</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Implemented encryption algorithms (Caesar, Vigenere) and built a command-line interface.
+                    </p>
+                    <p>
+                        Developed a C program to reverse whole file containing password hashes, using rainbow tables attacks and lookup chains.
+                    </p>
+                </li>
+                <li>
+                    <p><span class="white-accent">Technologies:</span> pointers, memory, CLI, I/O.</p>
+                </li>
+            </ul>
+
+            <!-- PHP -->
+            <h5>PHP</h5>
+            <ul>
+                <li>
+                    <p>
+                        - 1 work project @ <span class="white-accent">Enedis</span><br>
+                        - Multiple academic projects (Handisport Manager S3/S4, )
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Built authentication systems, REST API backends, and complete CRUD applications in PHP.
+                    </p>
+                </li>
+                <li>
+                    <p><span class="white-accent">Technologies:</span> PHP, MVC, REST, MySQL.</p>
+                </li>
+            </ul>
+
+        </div>
+        </details>
+
+
+        <details class="card">
+            <summary class="skill-header">
+                <img alt="Frontend logo" src="/images/Skills/PBI.svg">
+                <h4>Frontend</h4>
+                <span class="small">Multiple Projects</span>
+            </summary>
+            <div class="divider"></div>
+            <div class="skill-projects">
+            <!-- HTML/CSS -->
+            <h5>HTML & CSS</h5>
+            <ul>
+                <li>
+                    <p>
+                        - 1 Work project @ <span class="white-accent">Enedis</span>
+                        <br>
+                        - Multiple academic projects
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Built responsive UIs, optimized accessibility, and styled applications with modern CSS.
+                    </p>
+                </li>
+                <li>
+                    <p><span class="white-accent">Technologies:</span> HTML, CSS, Javascript, Responsive design.</p>
+                </li>
+            </ul>
+
+            <!-- PHP Front / HTML templates -->
+            <h5>Front-end in PHP projects</h5>
+            <ul>
+                <li>
+                    <p>
+                        - 1 Work project @ <span class="white-accent">Enedis</span>
+                        <br>
+                        - Multiple academic projects
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Developed dynamic interfaces (auth UI, dashboards, forms) for the Enedis webapp and
+                        my academic php projects.
+                    </p>
+                </li>
+                <li>
+                    <p><span class="white-accent">Technologies:</span> HTML, CSS, Javascript, PHP templates.</p>
+                </li>
+            </ul>
+
+        </div>
+        </details>
         </div>
 
         <h3>AI</h3>
