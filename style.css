@@ -18,6 +18,7 @@
 
     --big: 400 1.4rem/1.6em var(--ff);        /* 20 / 32px */
     --p: 400 1.3rem/1.6em var(--ff);             /* 20 / 26px */
+    --smallp: 400 1.1rem/1.8em var(--ff);
     --small: 400 1.1rem/1.8em var(--ff);         /* 12 / 24px */
 
     /* UIs */
@@ -46,7 +47,7 @@
     /* ===== Text ===== */
     --text-light: #F0F8FF;         /* AliceBlue, texte clair */
     --text-dark: #111827;          /* Gris anthracite (si besoin de clair sur fond blanc) */
-    --text-subtle: rgba(240,248,255, 0.8);        /* Gris neutre pour légendes */
+    --text-subtle: rgba(240, 248, 255, 0.87);        /* Gris neutre pour légendes */
 
     /* ===== Accents ===== */
     --accent: #FDE68A;             /* Jasmine (jaune pastel) */
@@ -79,6 +80,10 @@
 
 }
 
+html {
+    zoom: 0.9; /* Chrome/Edge, pas standard */
+}
+
 /* landing page */
 h1, .h1sized { font: var(--h1); }
 h2, .h2sized { font: var(--h2); }
@@ -91,11 +96,10 @@ h4, .h4sized { font: var(--h4); }
 }
 .big{ font: var(--big); }
 p, li, .psized { font: var(--p); }
-.small, h5  {
+.small  {
     font: var(--small);
     color : var(--text-subtle)
 }
-
 
 
 /* UIs */
@@ -109,8 +113,12 @@ p, li, .psized { font: var(--p); }
 .ui.bold { font: var(--boldui); }
 
 
-h1,h2,h3,h4 {
+h1,h2,h4 {
     margin: 1rem 0 1rem;
+}
+
+h3 {
+    margin: 2rem 0 2rem;
 }
 
 .subheading,.big,p {
@@ -124,6 +132,11 @@ h1,h2,h3,h4 {
 
 .accent {
     color: var(--accent);
+    font-weight: var(--accent-weight);
+}
+
+.white-accent {
+    color: var(--text-light);
     font-weight: var(--accent-weight);
 }
 
@@ -150,7 +163,6 @@ body {
 html,body{
     height:100%
 }
-
 
 
 /* Fond gradient plein écran  */
@@ -196,7 +208,6 @@ nav {
     background: var(--glass);
     padding :  .5rem 1rem;
     margin : .5rem;
-
 }
 
 .glass-link:hover {
@@ -341,8 +352,6 @@ section.panel{
     flex-grow: 2;
 }
 
-
-
 .skill-header::after{
     content:"▾";
     font-size:2em;
@@ -365,7 +374,7 @@ section.panel{
 }
 
 ul {
-    list-style-type: "-";
+    list-style-type: none;
     margin : 0.3em 0;
 }
 
@@ -374,20 +383,26 @@ ul {
 }
 
 .skill-projects h5{
-    margin : 0;
+    font :var(--h2);
+    font-size:1.1em;
+    color: var(--text-light);
+    margin: 2em 0 0;
 }
 
 li a{
-    text-decoration: none;
-    color : inherit;
+    font: var(--smallp);
+    text-decoration: underline;
+    color : var(--accent);
 }
 
 li p {
-    margin : 0;
+    font: var(--smallp);
+    margin-top : 0.8em ;
+    color: var(--text-subtle)
 }
 
 li a:hover{
-    color: var(--accent);
+    color: var(--accent-strong);
 }
 
 .skills-grid > .card > summary {
