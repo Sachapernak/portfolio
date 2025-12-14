@@ -80,6 +80,10 @@
 
 }
 
+html {
+    zoom: 0.9; /* Chrome/Edge, pas standard */
+}
+
 /* landing page */
 h1, .h1sized { font: var(--h1); }
 h2, .h2sized { font: var(--h2); }
@@ -109,8 +113,12 @@ p, li, .psized { font: var(--p); }
 .ui.bold { font: var(--boldui); }
 
 
-h1,h2,h3,h4 {
+h1,h2,h4 {
     margin: 1rem 0 1rem;
+}
+
+h3 {
+    margin: 2rem 0 2rem;
 }
 
 .subheading,.big,p {
